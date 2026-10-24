@@ -23,7 +23,20 @@ ifeq ($(WITH_GMS),true)
             endif
         endif
    else
-        ifneq (,$(wildcard vendor/partner_gms))
+        ifneq (,$(wildcard vendor/gms))
+            ifneq ($(GMS_MAKEFILE),)
+                $(call inherit-product, vendor/gms/$(GMS_MAKEFILE))
+            else ifeq ($(TARGET_USES_PICO_GAPPS),true)
+                $(call inherit-product, vendor/gms/gms_pico.mk)
+            else ifeq ($(TARGET_USES_MINI_GAPPS),true)
+                $(call inherit-product, vendor/gms/gms_mini.mk)
+            else
+                $(call inherit-product, vendor/gms/gms_full.mk)
+            endif
+
+            DONT_DEXPREOPT_PREBUILTS := true
+            RELAX_USES_LIBRARY_CHECK := true
+        else ifneq (,$(wildcard vendor/partner_gms))
             # Specify the GMS makefile you want to use, for example:
             #   - fi.mk             - Project Fi
             #   - gms.mk            - default GMS
