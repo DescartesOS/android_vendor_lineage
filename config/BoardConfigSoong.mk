@@ -28,6 +28,14 @@ $(call soong_config_set,lineage_bootanimation,height,$(TARGET_SCREEN_HEIGHT))
 $(call soong_config_set,lineage_bootanimation,width,$(TARGET_SCREEN_WIDTH))
 $(call soong_config_set,lineage_bootanimation,half_res,$(TARGET_BOOTANIMATION_HALF_RES))
 
+ifeq ($(shell test $(TARGET_SCREEN_WIDTH) -le 720 && echo true),true)
+$(call soong_config_set,descartes_bootanimation,res,720)
+else ifeq ($(shell test $(TARGET_SCREEN_WIDTH) -ge 1440 && echo true),true)
+$(call soong_config_set,descartes_bootanimation,res,1440)
+else
+$(call soong_config_set,descartes_bootanimation,res,1080)
+endif
+
 ifneq ($(TARGET_BOOTANIMATION),)
 $(call soong_config_set,lineage_bootanimation,prebuilt_file,$(TARGET_BOOTANIMATION))
 endif
