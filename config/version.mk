@@ -24,3 +24,28 @@ ifneq ($(DESCARTES_MAINTAINER),)
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.descartes.maintainer=$(DESCARTES_MAINTAINER)
 endif
+
+ifneq ($(DESCARTES_PROCESSOR),)
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.descartes.soc=$(DESCARTES_PROCESSOR)
+endif
+
+ifneq ($(DESCARTES_BATTERY),)
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.descartes.battery=$(DESCARTES_BATTERY)
+endif
+
+ifneq ($(DESCARTES_DISPLAY),)
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.descartes.display=$(DESCARTES_DISPLAY)
+endif
+
+ifneq ($(DESCARTES_CAMERA_REAR_INFO),)
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.descartes.camera.rear=$(DESCARTES_CAMERA_REAR_INFO)
+endif
+
+ifneq ($(DESCARTES_CAMERA_FRONT_INFO),)
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.descartes.camera.front=$(DESCARTES_CAMERA_FRONT_INFO)
+endif
