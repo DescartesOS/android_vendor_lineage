@@ -41,7 +41,7 @@ custom_local_manifest = ".repo/local_manifests/roomservice.xml"
 custom_default_revision = "17.0"
 custom_dependencies = "crdroid.dependencies"
 org_manifest = "crdroidandroid"  # leave empty if org is provided in manifest
-org_display = "crDroid Android"  # needed for displaying
+org_display = "DescartesOS"  # needed for displaying
 
 manifests_dir = ".repo/manifests"
 kernel_snippet_template = "snippets/kernel-%s.xml"
@@ -285,7 +285,7 @@ def validate_repository(repo_name, target_path):
     repo_lower = repo_name.lower()
     target_lower = target_path.lower()
 
-    if not any(x in repo_lower for x in ('crdroidandroid', 'themuppets', 'lineageos')):
+    if not any(x in repo_lower for x in ('descartesos', 'crdroidandroid', 'themuppets', 'lineageos')):
         return False, "Unsupported repository org"
 
     if 'lineageos' in repo_lower:

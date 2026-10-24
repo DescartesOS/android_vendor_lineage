@@ -58,7 +58,7 @@ PRODUCT_COPY_FILES += \
 
 # Legal
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.crdroidlegal.url=https://crdroid.net/legal.php
+    ro.crdroidlegal.url=https://github.com/DescartesOS
 
 # Media
 PRODUCT_PRODUCT_PROPERTIES += \
