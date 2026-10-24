@@ -16,7 +16,15 @@
 #
 
 #$1=TARGET_DEVICE, $2=PRODUCT_OUT, $3=FILE_NAME
-existingOTAjson=./vendor/crDroidOTA/$1.json
+if [ -f ./OTA/$1.json ]; then
+    existingOTAjson=./OTA/$1.json
+elif [ -f ./vendor/OTA/$1.json ]; then
+    existingOTAjson=./vendor/OTA/$1.json
+elif [ -f ./vendor/crDroidOTA/$1.json ]; then
+    existingOTAjson=./vendor/crDroidOTA/$1.json
+else
+    existingOTAjson=./OTA/$1.json
+fi
 output=$2/$1.json
 
 # Cleanup old file
@@ -74,7 +82,7 @@ cat <<EOF >$output
             "oem": "${OEM:-}",
             "device": "${DEVICE:-}",
             "filename": "$FILENAME",
-            "download": "https://sourceforge.net/projects/crdroid/files/$1/$V_MAX.x/$3/download",
+            "download": "https://github.com/DescartesOS/OTA/releases/download/$FILENAME/$FILENAME",
             "timestamp": $TIMESTAMP,
             "md5": "$MD5",
             "sha256": "$SHA256",
@@ -101,7 +109,7 @@ EOF
 
 if [ ! -f $existingOTAjson ]; then
     echo "There is no official support for this device yet"
-    echo "Consider adding official support by reading the documentation at https://github.com/crdroidandroid/android_vendor_crDroidOTA/blob/17.0/README.md"
+    echo "Consider adding official support by reading the documentation at https://github.com/DescartesOS/OTA/blob/lineage-24.0/README.md"
 fi
 
 echo "JSON file generation completed"
