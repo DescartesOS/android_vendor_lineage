@@ -36,6 +36,7 @@ ifeq ($(WITH_GMS),true)
 
             DONT_DEXPREOPT_PREBUILTS := true
             RELAX_USES_LIBRARY_CHECK := true
+            PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/gms
         else ifneq (,$(wildcard vendor/partner_gms))
             # Specify the GMS makefile you want to use, for example:
             #   - fi.mk             - Project Fi
