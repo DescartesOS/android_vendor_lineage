@@ -48,6 +48,7 @@ PRODUCT_PACKAGES += \
     GameSpace \
     LMOFreeform \
     LMOFreeformSidebar \
+    LockStyles \
     OmniJaws \
     OmniStyle
 
