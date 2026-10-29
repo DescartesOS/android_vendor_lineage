@@ -93,7 +93,8 @@ PRODUCT_COPY_FILES += \
 
 # Component overrides
 PRODUCT_PACKAGES += \
-    lineage-component-overrides.xml
+    lineage-component-overrides.xml \
+    SettingsIntelligence
 
 # This is Lineage!
 PRODUCT_COPY_FILES += \

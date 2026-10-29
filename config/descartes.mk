@@ -46,8 +46,8 @@ PRODUCT_PACKAGES += \
     AxThemeStore \
     BatteryStatsViewer \
     GameSpace \
-    LMOFreeform \
-    LMOFreeformSidebar \
+    DescartesFreeform \
+    DescartesFreeformSidebar \
     LockStyles \
     OmniJaws \
     OmniStyle
