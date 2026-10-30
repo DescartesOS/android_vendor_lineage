@@ -50,7 +50,8 @@ PRODUCT_PACKAGES += \
     DescartesFreeformSidebar \
     LockStyles \
     OmniJaws \
-    OmniStyle
+    OmniStyle \
+    Sonora
 
 ifneq ($(TARGET_DISABLE_MATLOG),true)
 PRODUCT_PACKAGES += \
