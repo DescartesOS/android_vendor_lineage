@@ -1,13 +1,13 @@
 flag_value {
   package: "com.android.systemui"
   name: "scene_container"
-  state: ENABLED
+  state: DISABLED
   permission: READ_ONLY
 }
 
 flag_value {
   package: "com.android.systemui"
   name: "dual_shade"
-  state: ENABLED
+  state: DISABLED
   permission: READ_ONLY
 }
