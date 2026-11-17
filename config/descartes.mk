@@ -51,7 +51,9 @@ PRODUCT_PACKAGES += \
     LockStyles \
     OmniJaws \
     OmniStyle \
-    Sonora
+    Sonora \
+    DescartesLaboratory \
+    PenguinDex
 
 ifneq ($(TARGET_DISABLE_MATLOG),true)
 PRODUCT_PACKAGES += \
